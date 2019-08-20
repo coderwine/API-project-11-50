@@ -1,27 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow|Slackey&display=swap');
+
+/* font-family: 'Barlow', sans-serif;
+font-family: 'Slackey', cursive; */
+
 body {
-    margin: 100px;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Barlow', sans-serif;
+    background-image: linear-gradient(
+        rgba(255,255,255,1),
+        rgba(255,255,255,0)),
+    url('./apiAssets/eggsBackground.jpg');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 200vw;
+    background-size: 200vh;
+
 }
 
 h1 {
-    color: green;
-}
-/* TABLE BUILD */
-
-th, td, p, input {
-    font:14px Verdana;
-}
-
-table, th, td {
-    border: solid 1px #DDD;
-    border-collapse: collapse;
-    padding: 2px 3px;
+    color: #111;
+    font-family: 'Slackey', cursive;
     text-align: center;
+    font-size: 4em;
+    text-shadow: 2pt 3pt 5pt #444;
 }
 
-th {
-    font-weight:bold;
+/* SEARCH FIELD */
+.searchInput {
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    text-align: center;
+    font-size: 2.7em;
+    margin-bottom: .5em;
+    border-radius: 10px;
+}
+
+.submit {
+    font-size: 2em;
+    justify-content: center;
+    font-family: 'Slackey', cursive;
+    background-color: #888;
+    border-radius: 10px;
+    margin-left: 4em;    
+}
+
+.submit:hover {
+    background-color: white;
+    color: red;
+}
+
+/* RESULTS */
+
+.onTable {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2pt 3pt 5pt #444;
+}
+
+.onTable img {
+    height: 400px;
+    width: 400px;
+    border-radius: 300px;
+    margin: .5em 11.5em;
+}
+
+#providedBy {
+    text-align: center;
+    text-shadow: 2pt 3pt 9pt #333;
+    margin-bottom: 3em;
 }

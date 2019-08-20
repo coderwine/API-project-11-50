@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "js-11-50-api"
+    "default": "js-11-50-api",
+    "n": "js-11-50-api"
   }
 }
