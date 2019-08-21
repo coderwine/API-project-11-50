@@ -9,13 +9,14 @@ const submitBtn = document.querySelector('.submit');
 const setTable = document.querySelector('.onTable');
 const providedBy = document.querySelector('#providedBy');
 const toFoodURL = document.querySelector('a');
+// Next Button Mod
+// const nextBtn = document.quereySelector('.whatElse');
 
 searchForm.addEventListener('submit', fetchResults);
 
     function fetchResults(e) {
         e.preventDefault();
         console.log(e); 
-        // url = baseURL + "?q=potato" + '&app_id='+ appId + "&app_key=" + key;
         url = baseURL + "?q=" + searchTerm.value + '&app_id='+ appId + "&app_key=" + key;
         console.log(url);
                 
@@ -24,7 +25,7 @@ searchForm.addEventListener('submit', fetchResults);
         return results.json();
     }) .then(function(json){
         console.log(json);
-        // displayResults(json);
+        
         
     let hungryFor = json.hits[0].recipe.label;
     let recipeURL = json.hits[0].recipe.url;
@@ -39,7 +40,14 @@ searchForm.addEventListener('submit', fetchResults);
     let link = document.createElement('a');
         linkText = document.createTextNode('  Show me the Food Mats!');
         link.href = recipeURL;
+        link.target = '_blank';
         link.appendChild(linkText);
+
+        // Next Button Mod
+    // let anotherDish = document.createElement('button');
+    //     anotherDish.type = 'submit';
+    //     anotherDishText = document.createTextNode('Maybe Something Else?');
+    
         
     // Results Build
     let suggestDish = document.getElementById('onTable');
@@ -50,12 +58,34 @@ searchForm.addEventListener('submit', fetchResults);
 
         providedBy.appendChild(source);
         source.innerText = `Recipe provided by ${sourceBy}.`;
+        providedBy.appendChild(document.createElement('br'));
         providedBy.appendChild(link);
-   
+        
+        // Next Button Mod
+        
+        // nextBtn.addEventListener('click', nextDish);
+        // nextBtn.appendChild(nextDish);
 
-    });
+        // function nextDish(e) {
+        //     fetchResults(e);
+        //     console.log("Next Recipe: ", );
+
+        //     while(setTable.firstChild && providedBy.firstChild)
+        //         setTable.removeChild(setTable.firstChild) && providedBy.removeChild(providedBy.firstChild);
+        // }
+        //  if (let i = 0; i >= hungryFor[0]; i++)
+        // let hungryFor = json.hits[0].recipe.label;
+        // let recipeURL = json.hits[0].recipe.url;
+        // let imgFood = json.hits[0].recipe.image;
+        // let sourceBy = json.hits[0].recipe.source;
+
+
+    })
+
+
+}
 
 
     
-}
+
 
